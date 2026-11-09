@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-speculative-edit-sandbox"
+version = "0.1.0"
+description = "In-memory filesystem overlay and AST validator that tests candidate agent code changes before committing them to disk"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+agent-speculative-edit-sandbox = "agent_speculative_edit_sandbox.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["agent_speculative_edit_sandbox*"]
